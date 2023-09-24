@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC/TMB</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <section id="overlay">
+    <form id="calculadoraForm" onsubmit="calcularIMCyTMB(); return false;" action="submission.html" method="POST">
+    <h1>¡Calcule su IMC y su TMB!</h1>
+        <section class="peso">
+          <label for="amount">Ingrese su peso en kilogramos:</label>
+          <input type="text" name="peso" id="peso" placeholder="Ej: 170">
+        </section>
+		<section class="estatura">
+          <label for="amount">Ingrese su estatura en metros:</label>
+          <input type="text" name="estatura" id="estatura" placeholder="Ej: 1.70">
+        </section>
+		<section class="edad">
+          <label for="amount">Ingrese su edad en numeros:</label>
+          <input type="text" name="edad" id="edad" placeholder="Ej: 170">
+        </section>
+        <section class="nivelActividad">
+		  <br>
+          <span>Seleccione su nivel de actividad fisica:</span> 
+		  <br>
+		  <div id="opcionesactividad">
+          <input type="radio" name="actividad" id="ligero" value="ligero">
+          <label for="ligero">Ligero</label>
+          <input type="radio" name="actividad" id="moderado" value="moderado">
+          <label for="moderado">Moderado</label>
+          <input type="radio" name="actividad" id="intenso" value="intenso">
+          <label for="intenso">Intenso</label>
+		  </div>
+        </section>
+        
+        <section class="sexo">
+          <span>Seleccione su sexo:</span> 
+		  <br>
+		  <div id="opcionessexo">
+          <input type="radio" name="sexo" id="masculino" value="masculino">
+		  <label for="masculino">Masculino</label>                       
+          <input type="radio" name="sexo" id="femenino" value="femenino">
+		  <label for="femenino">Femenino</label>
+		  </div>
+        </section>
+		<div id="resultados"></div>
+        <section class="submission">
+          <input type="submit" value="Calcular">
+        </section>
+        
+    </form>
+  </section>
+
+
+  <script src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+#overlay {
+    background-color: #fff;
+    width: 80%;
+    max-width: 400px;
+    margin: 5% auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 1em auto;
+}
+
+input[type="number"] {
+    width: 85%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="text"] {
+    width: 85%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+	display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.nivelActividad label,
+.sexo label {
+  display: inline-block; 
+  text-align: center;
+  margin: 5% auto;
+}
