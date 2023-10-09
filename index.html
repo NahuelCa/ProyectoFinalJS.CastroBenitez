@@ -8,8 +8,32 @@
 </head>
 <body>
   <section id="overlay">
+  <div class="container" id="container">
+  
+  	<div class="form-container generador-container">
+		<form action="#">
+        <section class="pesoej">
+          <label id="pesoej" for="pesoej">Peso en kilogramos:</label>
+        </section>
+		<section class="estaturaej">
+          <label id="estaturaej" for="estaturaej">Estatura en metros:</label>
+        </section>
+		<section class="edadej">
+          <label id="edadej" for="edadej">Edad:</label>
+        </section>
+        <section class="nivelActividadej">
+          <label id="actividadej" for="actividadej">Nivel de actividad:</label>
+        </section>
+        <section class="sexoej">
+          <label id="sexoej" for="sexoej">Sexo:</label>
+        </section>
+		<div id="resultadosej"></div>
+		<button id="generarBoton">Generar</button>
+		</form>
+	</div>
+  
+    <div class="form-container calculadora-container">
     <form id="calculadoraForm" onsubmit="calcularIMCyTMB(); return false;" action="submission.html" method="POST">
-    <h1>¡Calcule su IMC y su TMB!</h1>
         <section class="peso">
           <label for="amount">Ingrese su peso en kilogramos:</label>
           <input type="text" name="peso" id="peso" placeholder="Ej: 170">
@@ -24,7 +48,7 @@
         </section>
         <section class="nivelActividad">
 		  <br>
-          <span>Seleccione su nivel de actividad fisica:</span> 
+          <span>Ingrese su nivel de actividad:</span> 
 		  <br>
 		  <div id="opcionesactividad">
           <input type="radio" name="actividad" id="ligero" value="ligero">
@@ -35,9 +59,8 @@
           <label for="intenso">Intenso</label>
 		  </div>
         </section>
-        
         <section class="sexo">
-          <span>Seleccione su sexo:</span> 
+          <span>Ingrese su sexo:</span> 
 		  <br>
 		  <div id="opcionessexo">
           <input type="radio" name="sexo" id="masculino" value="masculino">
@@ -48,13 +71,57 @@
         </section>
 		<div id="resultados"></div>
         <section class="submission">
-          <input type="submit" value="Calcular">
+          <div class="botones-container">
+            <button type="submit" id="calcular">Calcular</button>
+            <button type="submit" id="guardarHistorial">Guardar</button>
+          </div>
+		  <button id="mostrarHistorial">Historial</button>
         </section>
         
     </form>
+	</div>
+	<div class="overlay-container">
+	<div class="overlay">
+	  <div class="overlay-panel overlay-left">
+	    <h1>¡Calcula tu IMC y TMB!</h1>
+		<p>Aqui puedes ingresar tus datos personales para conocer tu IMC y TMB</p>
+		<button class="ghost" id="calculadora">Ir a la calculadora</button>
+	  </div>
+	  <div class="overlay-panel overlay-right">
+	  <h1>¡Aprende con ejemplos!</h1>
+      <p>Aqui tienes una herramienta que calcula datos generados aleatoriamente.</p>
+	  <button class="ghost" id="generador">Ir al generador</button>
+	  </div>
+    </div>
+	</div>
+	<div class="table-container historial-container">
+      <table id="historialTable">
+        <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Peso</th>
+          <th>Altura</th>
+          <th>Sexo</th>
+          <th>Edad</th>
+          <th>Nivel de Actividad</th>
+          <th>IMC</th>
+          <th>TMB</th>
+        </tr>
+        </thead>
+      <tbody>
+      <!-- Datos del historial guardados en la tabla-->
+      </tbody>
+      </table>
+
+  <!--<button id="borrarFila">Borrar Fila</button>-->
+  <div class="botones-container">
+  <button id="volver">volver</button>
+  <button id="vaciarHistorial">Vaciar Historial</button>
+  </div>
+    </div>	
+  </div>
   </section>
-
-
-  <script src="./main.js"></script>
+  
+<script src="./main.js"></script>
 </body>
 </html>
