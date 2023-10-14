@@ -72,6 +72,7 @@ function interpretarTMB(tmb) {
 
 // Función principal de la aplicación web.
 function calcularIMCyTMB() {
+	event.preventDefault();
     // Obtener los valores ingresados por el usuario desde los campos del formulario.
     let peso = parseFloat(document.getElementById("peso").value);
     let altura = parseFloat(document.getElementById("estatura").value);
@@ -96,10 +97,10 @@ function generarNumeroAleatorio(min, max) {
 }
 
 function generarDatosAleatorios() {
-    const pesoAleatorio = generarNumeroAleatorio(50, 100);
-    const alturaAleatoria = generarNumeroAleatorio(1.5, 2.0);
+    const pesoAleatorio = generarNumeroAleatorio(30, 200);
+    const alturaAleatoria = generarNumeroAleatorio(1.3, 2.3);
     const generoAleatorio = Math.random() < 0.5 ? 'masculino' : 'femenino';
-    const edadAleatoria = Math.floor(generarNumeroAleatorio(18, 60));
+    const edadAleatoria = Math.floor(generarNumeroAleatorio(15, 115));
     const nivelesActividad = ['ligero', 'moderado', 'intenso'];
     const nivelActividadAleatorio = nivelesActividad[Math.floor(generarNumeroAleatorio(0, nivelesActividad.length))];
     return {
@@ -143,16 +144,20 @@ function aprenderCalculadora() {
 
 // Evento para el botón "Generar".
 generarBoton.addEventListener('click', function () {
+	event.preventDefault();
     aprenderCalculadora();
 });
 
 // Evento para mostrar el historial.
 mostrarHistorialBtn.addEventListener("click", function () {
+	event.preventDefault();
     historialContainer.classList.toggle("active");
 });
 
 // Evento para el botón "Guardar".
 guardarBoton.addEventListener('click', () => {
+	event.preventDefault();
+	
     // Obtener los datos y resultados del usuario.
     const peso = parseFloat(document.getElementById("peso").value);
     const altura = parseFloat(document.getElementById("estatura").value);
