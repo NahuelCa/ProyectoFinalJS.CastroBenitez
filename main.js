@@ -72,7 +72,7 @@ function interpretarTMB(tmb) {
 
 // Función principal de la aplicación web.
 function calcularIMCyTMB() {
-	event.preventDefault();
+    event.preventDefault();
     // Obtener los valores ingresados por el usuario desde los campos del formulario.
     let peso = parseFloat(document.getElementById("peso").value);
     let altura = parseFloat(document.getElementById("estatura").value);
@@ -89,6 +89,31 @@ function calcularIMCyTMB() {
     // Mostrar los resultados en el div de resultados.
     resultadosDiv.innerHTML = `<p>Tu IMC es: ${imc.toFixed(2)} ${interpretacionIMC}</p>`;
     resultadosDiv.innerHTML += `<p>${interpretacionTMB}</p>`;
+
+    // Cargar el archivo JSON de descripciones y mostrar la descripción del IMC en un cuadro de alerta
+    fetch('descripciones.json')
+        .then(response => response.json())
+        .then(data => {
+            const imcDescripciones = data.imcDescripciones;
+            let descripcionIMC;
+
+            if (imc < 18) {
+                descripcionIMC = imcDescripciones.bajoPeso;
+            } else if (imc < 25) {
+                descripcionIMC = imcDescripciones.pesoSaludable;
+            } else if (imc < 30) {
+                descripcionIMC = imcDescripciones.sobrepesoLeve;
+            } else if (imc < 35) {
+                descripcionIMC = imcDescripciones.sobrepesoModerado;
+            } else if (imc < 40) {
+                descripcionIMC = imcDescripciones.obesidad;
+            } else {
+                descripcionIMC = imcDescripciones.obesidadGrave;
+            }
+
+            alert(descripcionIMC);
+        })
+        .catch(error => console.error('Error al cargar el archivo JSON:', error));
 }
 
 // Función para generar datos aleatorios.

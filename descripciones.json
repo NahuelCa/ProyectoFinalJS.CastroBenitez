@@ -1,0 +1,9 @@
+{
+  "imcDescripciones": {
+    "bajoPeso": "Tienes un IMC inferior a 18, lo que indica bajo peso (insuficiencia ponderal).",
+    "pesoSaludable": "Tu IMC está en el rango saludable, ¡sigue así!",
+    "sobrepesoLeve": "Tienes un IMC ligeramente superior al rango saludable, lo que indica sobrepeso leve.",
+    "sobrepesoModerado": "Tienes un IMC que indica sobrepeso moderado.",
+    "obesidad": "Tu IMC indica obesidad, es importante tomar medidas para mejorar tu salud.",
+    "obesidadGrave": "Tienes un IMC muy alto, lo que indica obesidad grave. Consulta a un profesional de la salud."
+}
